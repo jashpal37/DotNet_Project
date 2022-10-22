@@ -4,91 +4,153 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <style type="text/css">
+    <title>Notes Application</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form {
+            border: 3px solid #f1f1f1;
+        }
+        input[type=text], input[type=textarea] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: flex;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .cnbtn {
+            background-color: #ec3f3f;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 49%;
+        }
+        .lgnbtn {
+            background-color: #4CAF50;
+            display: inline-block;
+            color: white;
+            padding: 10px 20px;
+            margin: 4px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+        }
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+        .container {
+            padding: 16px;
+        }
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cnbtn {
+                width: 100%;
+            }
+        }
+        .frmalg {
+            margin: auto;
+            width: 40%;
+        }
         .auto-style1 {
             width: 100%;
+            padding: 30px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
         }
+
+        .auto-style2 {
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #4CAF50;
+            display: inline-block;
+            color: white;
+            padding: 10px 20px;
+            margin: 2px 0;
+            cursor: pointer;
+            width: 118px;
+        }
+
+        .auto-style3 {
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #4CAF50;
+            display: inline-block;
+            color: white;
+            padding: 10px 20px;
+            margin: 2px 0;
+            cursor: pointer;
+            width: 118px;
+        }
+
         .auto-style4 {
-            height: 62px;
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #4CAF50;
+            display: inline-block;
+            color: white;
+            padding: 8px 20px;
+            margin: 2px 0;
+            cursor: pointer;
+            width: 118px;
         }
-        .auto-style5 {
-            width: 621px;
-            height: 355px;
-            margin-right: 0px;
-            margin-top: 0px;
-        }
-        .auto-style6 {
-            height: 62px;
-            width: 716px;
-        }
-        .auto-style7 {
-            width: 716px;
-            height: 383px;
-        }
-        .auto-style8 {
-            width: 254px;
-            height: 50px;
-        }
-        .auto-style9 {
-            height: 50px;
-            width: 716px;
-        }
-        .auto-style10 {
-            height: 50px;
-        }
-        .auto-style11 {
-            height: 383px;
-        }
-        .auto-style12 {
-            height: 62px;
-            width: 254px;
-        }
-        .auto-style13 {
-            width: 254px;
-            height: 383px;
-        }
+
+
+
     </style>
+
 </head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style4" colspan="2">
-                        <asp:Label ID="lbl" runat="server" Text="Note Taking Application"></asp:Label>
-                    </td>
-                    <td class="auto-style4"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style12">
-                        <asp:Label ID="Label1" runat="server" Text="Title:"></asp:Label>
-                    </td>
-                    <td class="auto-style6">
-                        <asp:TextBox ID="TitleText" runat="server" Height="40px" Width="464px"></asp:TextBox>
-                    </td>
-                    <td class="auto-style4">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style13">
-                        <asp:Label ID="notes" runat="server" Text="Note:"></asp:Label>
-                    </td>
-                    <td class="auto-style7">
-                        <textarea id="TextArea" runat="server" class="auto-style5" name="S1" value="" cols="20" rows="1"></textarea>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                    <td class="auto-style11"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style8">
-                        <asp:Button ID="save" runat="server" OnClick="Save_Click" Text="Save" Height="33px" Width="70px" />
-                    </td>
-                    <td class="auto-style9">
-                        <asp:Button ID="reset" runat="server" Text="Reset" OnClick="Reset_Click" Height="31px" Width="71px" />
-                    </td>
-                    <td class="auto-style10">
-                        <asp:Button ID="mynotes" runat="server" Text="My Notes" OnClick="mynotes_Click" ValidateRequestMode="Disabled" />
-                    </td>
-                </tr>
-            </table>
+<body style="background-color: aqua;">
+    <form id="form1" runat="server" class="frmalg" style="background-color: white; margin:auto;">
+
+        <div class="container">
+            <center>
+                <h3>Note Taking Application </h3>
+            </center>
+            <label for="uname"><b>Title:</b></label>
+            <br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TitleText" ErrorMessage="RequiredFieldValidator" Font-Bold="True" ForeColor="Red">Please  Enter title</asp:RequiredFieldValidator>
+            <br />
+            <asp:TextBox runat="server" ID="TitleText" placeholder="Enter Title for your note :)"></asp:TextBox>
+            <label for="psw"><b>Note:<br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextArea" ErrorMessage="RequiredFieldValidator" Font-Bold="True" ForeColor="Red">Please  Enter description</asp:RequiredFieldValidator>
+            </b></label>
+            &nbsp;<textarea runat="server"  id="TextArea" style="resize:vertical" placeholder="Write your memorable notes or your daily work Here !!:)" cols="20" name="S1" rows="2" class="auto-style1"></textarea>
+            &nbsp;<asp:Button runat="server" ID="save" CssClass="auto-style2" Text="Save" Width="122px" OnClick="Save_Click" margin="auto"/>
+            &nbsp;<input id="Reset" type="reset" value="Reset" class="auto-style3"/>
+            &nbsp;<asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style4" NavigateUrl="~/note_view.aspx" Width="81px" Font-Size="Medium">My notes</asp:HyperLink>
+            <%--<asp:Button runat="server" ID="reset" CssClass="auto-style2" Text="Reset" Width="143px" OnClick="Reset_Click" Enabled="False" />--%>
+            &nbsp;<%--<asp:Button runat="server" ID="mynotes" Text="My notes" CssClass="auto-style2" Width="153px" OnClick="mynotes_Click" Enabled="False" />--%>
+
+            <br />
+            
+
         </div>
     </form>
 </body>

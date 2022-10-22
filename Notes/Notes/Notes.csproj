@@ -71,6 +71,7 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="Css\Style.css" />
     <Content Include="notes_home.aspx" />
     <Content Include="note_view.aspx" />
     <Content Include="Web.config" />

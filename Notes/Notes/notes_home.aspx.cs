@@ -16,27 +16,7 @@ namespace Notes
         string connectionString = ConfigurationManager.ConnectionStrings["CSE"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            /*
-            try
-            {
-                using (con)
-                {
-                    string command = "Select * from Table";
-                    SqlCommand cmd = new SqlCommand(command, con);
-                    con.Open();
-                    SqlDataReader rdr = cmd.ExecuteReader();
-                    GridViewStu.DataSource = rdr;
-                    GridViewStu.DataBind();
-                    rdr.Close();
-                }
-
-            }
-            catch(Exception ex)
-            {
-                Response.Write("Errors: " + ex.Message);
-            }
-            */
+          
             
         }
 
@@ -70,23 +50,37 @@ namespace Notes
 
         }
 
-        protected void Reset_Click(object sender, EventArgs e)
+        /*protected void Reset_Click(object sender, EventArgs e)
         {
-            string note = TextArea.InnerText;
-            if (!string.IsNullOrEmpty(note))
+            
+            try
             {
-                note = "";
+                string note = TextArea.InnerText;
+                if (string.IsNullOrEmpty(note))
+                {
+                    Response.Write("Nothing to clear.");
+                }
+                else
+                {
+                    TextArea.InnerText = string.Empty;
+                    TitleText.Text = string.Empty;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Response.Write("Nothing to clear.");
+                Response.Write(ex.Message);
             }
 
         }
+        */
 
+
+        /*
         protected void mynotes_Click(object sender, EventArgs e)
         {
             Response.Redirect("note_view.aspx",true);
         }
+
+        */
     }
 }

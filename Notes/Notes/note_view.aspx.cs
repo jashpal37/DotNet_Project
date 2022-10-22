@@ -80,5 +80,14 @@ namespace Notes
             Response.Redirect("notes_home.aspx", true);
         }
 
+        protected void GridViewStu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SqlDataSource2_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }
